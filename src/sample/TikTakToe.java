@@ -1,4 +1,8 @@
-import javax.swing.*;
+package sample;
+
+//import javax.swing.*;
+
+import static javafx.application.Application.launch;
 
 /**
  * Zephren de la Cerda
@@ -15,34 +19,35 @@ public class TikTakToe {
     public static String O = "O";
 
 
-    public static void main(String[] args) {
-        gameboard = new String[3][3];
-        initBoard();
-        String currPlayer;
-        player1 = JOptionPane.showInputDialog("Player 1: enter your name.");
-        player2 = JOptionPane.showInputDialog("Player 2: enter your name.");
-        printBoard();
-        int total_turns = 0;
-        while (total_turns < 10) {
-            takeTurn(player1);
-            if (checkBoard(X)) {
-                //player1 wins congrats
-                System.out.println("Congrats! " + player1 + " you win!");
-                System.exit(0);
-            }
-            total_turns++;
-            printBoard();
-
-            takeTurn(player2);
-            if (checkBoard(O)) {
-                //player2 wins xDDDD
-                System.out.println("Congrats! " + player2 + " you win!");
-                System.exit(0);
-            }
-            total_turns++;
-            printBoard();
-        }
-    }
+//    public static void main(String[] args) {
+//        //launch(args);
+//        gameboard = new String[3][3];
+//        initBoard();
+//        String currPlayer;
+////        player1 = JOptionPane.showInputDialog("Player 1: enter your name.");
+////        player2 = JOptionPane.showInputDialog("Player 2: enter your name.");
+//        printBoard();
+//        int total_turns = 0;
+//        while (total_turns < 10) {
+//            takeTurn(player1);
+//            if (checkBoard(X)) {
+//                //player1 wins congrats
+//                System.out.println("Congrats! " + player1 + " you win!");
+//                System.exit(0);
+//            }
+//            total_turns++;
+//            printBoard();
+//
+//            takeTurn(player2);
+//            if (checkBoard(O)) {
+//                //player2 wins xDDDD
+//                System.out.println("Congrats! " + player2 + " you win!");
+//                System.exit(0);
+//            }
+//            total_turns++;
+//            printBoard();
+//        }
+//    }
 
     public static boolean checkBoard(String value) {
         //check diagonals
@@ -62,14 +67,14 @@ public class TikTakToe {
     }
 
     public static void takeTurn(String player) {
-        int x = Integer.parseInt(JOptionPane.showInputDialog("Enter which column: (1-3)")) - 1;
-        int y = Integer.parseInt(JOptionPane.showInputDialog("Enter which row: (1-3)")) - 1;
+//        int x = Integer.parseInt(JOptionPane.showInputDialog("Enter which column: (1-3)")) - 1;
+//        int y = Integer.parseInt(JOptionPane.showInputDialog("Enter which row: (1-3)")) - 1;
 
-        if (player == player1) {
-            gameboard[x][y] = X;
-        } else if (player == player2) {
-            gameboard[x][y] = O;
-        }
+//        if (player == player1) {
+//            gameboard[x][y] = X;
+//        } else if (player == player2) {
+//            gameboard[x][y] = O;
+//        }
     }
 
     public static boolean checkDiagonals(String value) {
@@ -140,5 +145,10 @@ public class TikTakToe {
                 gameboard[i][k] = "zephren";
             }
         }
+    }
+
+    public static void initPlayers(String p1, String p2){
+        player1 = p1;
+        player2 = p2;
     }
 }
